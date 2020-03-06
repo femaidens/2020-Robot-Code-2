@@ -16,6 +16,9 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.ScheduleCommand;
 import frc.robot.commands.DriveTeleop;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Limelight;
+import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.Climber;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,7 +33,10 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
   public static Drivetrain drivetrain;
+  public static Limelight limelight;
+  public static Shooter shooter;
   public static OI m_oi;
+  public static Climber climber;
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -42,6 +48,9 @@ public class Robot extends TimedRobot {
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
     drivetrain = new Drivetrain();
+    limelight = new Limelight();
+    shooter = new Shooter();
+    climber = new Climber();
     m_oi = new OI();
     m_oi.bindButtons();
     System.out.println("init");

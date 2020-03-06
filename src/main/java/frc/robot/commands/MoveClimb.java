@@ -11,13 +11,13 @@ import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Command;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
-import frc.robot.subsystems.Climb;
-//import frc.robot.subsystems.Climb;
+import frc.robot.subsystems.Climber;
+
 
 public class MoveClimb extends Command{
 
   public MoveClimb(){
-    requires(Robot.climb);
+    requires(Robot.climber);
 	}
 
 	protected void initialize(){
@@ -25,10 +25,10 @@ public class MoveClimb extends Command{
 	}
 
 	protected void execute() {
-		if(!Climb.limitSwitchB.get()){
+		if(!Climber.limitSwitchB.get()){
 			//SmartDashboard.putString("Ready?", Climb.ready());
 		} 
-    Climb.move();
+    Climber.move();
     System.out.println("Forward");
    // Climb.climbSol.set(Value.kForward);
 

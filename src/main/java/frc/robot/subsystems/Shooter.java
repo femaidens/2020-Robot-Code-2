@@ -34,19 +34,19 @@ import edu.wpi.first.wpilibj.Encoder;
 // Shooter subsystem
 public class Shooter extends Subsystem {
   // motors
-  //public static CANSparkMax turret = new CANSparkMax(RobotMap.turretPort, MotorType.kBrushless);
-  //public static CANSparkMax hood = new CANSparkMax(RobotMap.hoodPort, MotorType.kBrushless);
-  //public static CANSparkMax shooterNEO1 = new CANSparkMax(RobotMap.shooterPort1, MotorType.kBrushless);
-  //public static CANSparkMax shooterNEO2 = new CANSparkMax(RobotMap.shooterPort2, MotorType.kBrushless);
-  //public static CANEncoder shooterEncoder = shooterNEO1.getEncoder();
-  //public static CANPIDController shooterPIDController = shooterNEO1.getPIDController();
- // public static CANEncoder hoodEncoder = hood.getEncoder();
-  //public static CANPIDController hoodPIDController = hood.getPIDController();
-  //public int currentLimit = 28;
-  //public static Encoder absoluteEncoder = new Encoder(0, 1, 2);
+  public static CANSparkMax turret = new CANSparkMax(RobotMap.turretPort, MotorType.kBrushless);
+  public static CANSparkMax hood = new CANSparkMax(RobotMap.hoodPort, MotorType.kBrushless);
+  public static CANSparkMax shooterNEO1 = new CANSparkMax(RobotMap.shooterPort1, MotorType.kBrushless);
+  public static CANSparkMax shooterNEO2 = new CANSparkMax(RobotMap.shooterPort2, MotorType.kBrushless);
+  public static CANEncoder shooterEncoder = shooterNEO1.getEncoder();
+  public static CANPIDController shooterPIDController = shooterNEO1.getPIDController();
+  public static CANEncoder hoodEncoder = hood.getEncoder();
+  public static CANPIDController hoodPIDController = hood.getPIDController();
+  public int currentLimit = 28;
+  public static Encoder absoluteEncoder = new Encoder(0, 1, 2);
   
-  //public static DigitalInput limitSwitchLeft = new DigitalInput(RobotMap.limitSwitchPort2);
- // public static DigitalInput limitSwitchRight = new DigitalInput(RobotMap.limitSwitchPort3);
+  public static DigitalInput limitSwitchTurret = new DigitalInput(RobotMap.limitSwitchTurret);
+  
 
   
   public static double speed;
@@ -69,21 +69,19 @@ public class Shooter extends Subsystem {
   }
   
   public static void shooterLimitSwitch(){
-    /*while(limitSwitchLeft.get() == true){
+    while(limitSwitchLeft.get() == true){
       turret.set(-0.5);
     }
-    while(limitSwitchRight.get() == true){
-      turret.set(0.5);
-    }
-    turret.set(0.0);*/
+  
+    turret.set(0.0);
   }
   
   
-  /*public static void spinTurret(double speed) {
-    // double s = joy.getRawAxis(1);
+public static void spinTurret(double speed) {
+    double s = drive.getRawAxis(1);
     turret.set(speed);
   }
-  */
+  
 
   /*public static void spinHood(double speed){
     double s = joy.getRawAxis(1);

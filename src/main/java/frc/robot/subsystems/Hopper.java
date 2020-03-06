@@ -26,16 +26,14 @@ import frc.robot.subsystems.Intake;
 //Hopper Subsystem
 public class Hopper extends Subsystem {
 	// belt talons
-	//public static CANSparkMax belt1 = new CANSparkMax(RobotMap.beltPort1, MotorType.kBrushless);
-	//public static CANSparkMax belt2 = new CANSparkMax(RobotMap.beltPort2, MotorType.kBrushless);
+	public static CANSparkMax belt1 = new CANSparkMax(RobotMap.beltPort1, MotorType.kBrushless);
+	public static CANSparkMax belt2 = new CANSparkMax(RobotMap.beltPort2, MotorType.kBrushless);
 	public static Timer intakeTime = new Timer();
-	//public static DigitalInput echo = new DigitalInput(RobotMap.ultraEcho1);
-	//public static DigitalOutput trig = new DigitalOutput(RobotMap.ultraPing1);
-	//public static Ultrasonic ultra1 = new Ultrasonic(trig, echo);
-	//public static DigitalInput test = new DigitalInput(0);
-	//public static Ultrasonic ultra2 = new Ultrasonic(RobotMap.ultraPort2a, RobotMap.ultraPort2b);
+	public static DigitalInput echo = new DigitalInput(RobotMap.ultraEcho1);
+	public static DigitalOutput trig = new DigitalOutput(RobotMap.ultraPing1);
+	public static Ultrasonic ultra1 = new Ultrasonic(trig, echo);
+	public static Ultrasonic ultra2 = new Ultrasonic(RobotMap.ultraPort2a, RobotMap.ultraPort2b);
 	
-	// time of flight sensors--DO LATER
 	
 	public static int numCells;
 	
@@ -66,51 +64,6 @@ public class Hopper extends Subsystem {
 	public static int currentCellCount() {
 		return numCells;
 	}
-	
-	/*public static void checkUltra() {
-		ultra1.setAutomaticMode(true);
-		if(numCells == 5){
-			//Intake.liftIntake();
-		}
-		if(numCells < 5) {
-			//Intake.lowerIntake();
-		}
-		/*if(ultra1.getRangeMM() < 5 && numCells<5){
-			increaseCellCount();
-			
-			double first = ultra1.getRangeInches();
-			try{
-				Thread.sleep(10);
-			}
-			catch(InterruptedException ex){
-				Thread.currentThread().interrupt();
-			}
-			double second = ultra1.getRangeInches();
-			try{
-				Thread.sleep(10);
-			}
-			catch(InterruptedException ex){
-				Thread.currentThread().interrupt();
-			}
-			double third = ultra1.getRangeInches();
-			try{
-				Thread.sleep(10);
-			}
-			catch(InterruptedException ex){
-				Thread.currentThread().interrupt();
-			}
-			
-			if(first > second && second < third && second < 5){
-				increaseCellCount();
-			}
-			/*if(ultra2.getRangeMM() < 5){
-				decreaseCellCount();
-			}
-			System.out.println(first);
-			System.out.println(second);
-			System.out.println(third);
-			System.out.println(numCells);
-		}*/
 		
 		// Not done check logic and fix
 		public static void ballPassedIn(){

@@ -12,9 +12,9 @@ package frc.robot;
 public class RobotMap{
 	/* joysticks */
 	public static int driveJoyPort = 0;
-	//public static int joyPort2 = 1;
+	public static int joyPort2 = 1;
 	/*gyro*/
-	//public static int gyroPort = 2;
+	public static int gyroPort = 2;
 	/*talons*/
 	
 	public static int rearRightPort = 7;
@@ -23,8 +23,25 @@ public class RobotMap{
 	public static int frontLeftPort = 8;
 	public static int middleLeftPort = 9;
 	public static int middleRightPort = 3;
-	public static int gyroPort = 15;
 
 	public static int solChannel1 = 10;
 	public static int solChannel2 = 11;
+
+	public static int climbMotorPort = 12;
+	public static int limitPortB = 13;
+	public static int limitPortT = 14;
+	public static int solPortF = 16;
+	public static int solPortR = 17;
+
+	public static int beltPort1 = 18;
+	public static int beltPort2 = 19;
+	public static int ultraEcho1 = 20;
+	public static int ultraPing1 = 21;
+	public static int ultraPort2a = 22;
+	public static int ultraPort2b = 23;
+
+	public static int intake = 24;
+	public static int lift = 25;
+
+	
 }
