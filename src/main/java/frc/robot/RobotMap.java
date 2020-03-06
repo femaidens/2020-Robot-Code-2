@@ -42,6 +42,11 @@ public class RobotMap{
 
 	public static int intake = 24;
 	public static int lift = 25;
+	public static int turretPort = 26;
+	public static int hoodPort =27;
+	public static int shooterPort1 = 28;
+	public static int shooterPort2 = 29;
+	public static int limitSwitchTurret = 30;
 
-	
+
 }

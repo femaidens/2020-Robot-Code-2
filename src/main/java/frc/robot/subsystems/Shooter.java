@@ -44,7 +44,8 @@ public class Shooter extends Subsystem {
   public static CANPIDController hoodPIDController = hood.getPIDController();
   public int currentLimit = 28;
   public static Encoder absoluteEncoder = new Encoder(0, 1, 2);
-  
+  public static CANEncoder turretHall = turret.getEncoder();
+
   public static DigitalInput limitSwitchTurret = new DigitalInput(RobotMap.limitSwitchTurret);
   
 
@@ -69,7 +70,7 @@ public class Shooter extends Subsystem {
   }
   
   public static void shooterLimitSwitch(){
-    while(limitSwitchLeft.get() == true){
+    while(limitSwitchTurret.get() == true){
       turret.set(-0.5);
     }
   
@@ -78,7 +79,7 @@ public class Shooter extends Subsystem {
   
   
 public static void spinTurret(double speed) {
-    double s = drive.getRawAxis(1);
+    double s = OI.driveJoystick.getRawAxis(1);
     turret.set(speed);
   }
   
@@ -109,6 +110,18 @@ public static void spinTurret(double speed) {
     //return shooterEncoder.getVelocity();
     return 0;
   }
+
+  public static boolean outLimit(){
+  if((int)turretHall.getPosition() == 45){
+       turretHall.setPosition(44.0);
+      return true;
+     }
+     else if((int)turretHall.getPosition() == -45){
+      turretHall.setPosition(-44.0);
+      return true;
+    }
+    return false;
+  }
   
   @Override
   public void initDefaultCommand() {
@@ -117,4 +130,5 @@ public static void spinTurret(double speed) {
     //setDefaultCommand(new MoveHood(0.5));
     
   }
+
 }
