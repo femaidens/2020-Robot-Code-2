@@ -15,7 +15,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.subsystems.Drivetrain;
 
-//Deleted driveDistance and driveStraight 
 
 public class DriveDistanceStraight extends Command {
   public double initialRightTicks;
