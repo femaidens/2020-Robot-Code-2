@@ -11,9 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.DriveAuton;
-import frc.robot.commands.DriveStraight;
 import frc.robot.commands.DriveTeleop;
-import frc.robot.commands.DriveDistance;
 
 public class OI {
 	public static Joystick driveJoystick = new Joystick(RobotMap.driveJoyPort);
